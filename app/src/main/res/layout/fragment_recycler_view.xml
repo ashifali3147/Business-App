@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecyclerViewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_above="@+id/layout_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+<!--    <Button-->
+<!--        android:id="@+id/btn_getData"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:text="Get Data"/>-->
+        <RelativeLayout
+            android:id="@+id/layout_cart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFC3B"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/cart_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="#FF5722"
+                android:text="Item" />
+
+            <TextView
+                android:id="@+id/cart_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/cart_item"
+                android:text="Price: 10000"
+                android:textColor="#4AD550" />
+
+            <ImageView
+                android:id="@+id/cart_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/cart_price"
+                android:src="@drawable/delete" />
+
+            <ImageView
+                android:id="@+id/cart_confirm"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/confirm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cart_confirm"
+                android:layout_alignParentRight="true"
+                android:textColor="#2196F3"
+                android:layout_marginRight="10dp"
+
+                android:text="Confirm" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
