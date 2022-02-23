@@ -1,4 +1,4 @@
-package com.example.newapp;
+package com.example.newapp.usermodel;
 
 import java.util.List;
 

@@ -15,6 +15,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newapp.cartmodel.AddToCart;
+import com.example.newapp.cartmodel.CartData;
+import com.example.newapp.usermodel.UserData;
+
 import java.util.ArrayList;
 import java.util.List;
 

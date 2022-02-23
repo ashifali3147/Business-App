@@ -1,9 +1,11 @@
 package com.example.newapp;
 
+import com.example.newapp.userinfo.UserInfoModel;
+import com.example.newapp.usermodel.UserModel;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
@@ -28,4 +30,14 @@ public interface ApiService {
                     @Field("tag_category_id") String tag_name_id,
                     @Field("item_type") String item_type
             );
+    @FormUrlEncoded
+    @POST("api/v5/whitelabel/userCheck")
+    Call<UserInfoModel> getUserInfoData(
+
+            @Field("merchant_id") String merchant_id,
+            @Field("mobile") String mobile,
+            @Field("device_type") String device_type,
+            @Field("firebase_token") String firebase_token,
+            @Field("country_code") String country_code
+    );
 }

@@ -1,4 +1,4 @@
-package com.example.newapp;
+package com.example.newapp.usermodel;
 
 public class UserModel {
 //    public String status;

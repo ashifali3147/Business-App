@@ -12,24 +12,24 @@ public class ApiManager {
     public ApiService service;
     private Retrofit retrofit;
 
-    public ApiManager() {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder()
-                .readTimeout(10, TimeUnit.MINUTES)
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS)
-                .retryOnConnectionFailure(false)
-                .addInterceptor(logging)
-                .build();
-        retrofit = new Retrofit.Builder()
-                .baseUrl("http://myewards.in/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build();
-
-        service = retrofit.create(ApiService.class);
-    }
+//    public ApiManager() {
+//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+//        OkHttpClient client = new OkHttpClient.Builder()
+//                .readTimeout(10, TimeUnit.MINUTES)
+//                .connectTimeout(60, TimeUnit.SECONDS)
+//                .writeTimeout(60, TimeUnit.SECONDS)
+//                .retryOnConnectionFailure(false)
+//                .addInterceptor(logging)
+//                .build();
+//        retrofit = new Retrofit.Builder()
+//                .baseUrl("http://myewards.in/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(client)
+//                .build();
+//
+//        service = retrofit.create(ApiService.class);
+//    }
 
     public ApiManager(String BaseUrl) {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

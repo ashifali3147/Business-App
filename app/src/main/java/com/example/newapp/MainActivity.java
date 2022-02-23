@@ -6,22 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.Toast;
+
+import com.example.newapp.userinfo.UserInfo;
+import com.example.newapp.usermodel.UserModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void apiCall() {
-        new ApiManager().service.getMenuItemListing("15657", "15", "24019","", "", "", "", "1", "50", "", "", "", "name", "asc", "", "").enqueue(new Callback<UserModel>() {
+        new ApiManager("http://myewards.in/").service.getMenuItemListing("15657", "15", "24019","", "", "", "", "1", "50", "", "", "", "name", "asc", "", "").enqueue(new Callback<UserModel>() {
             @Override
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
                 Toast.makeText(MainActivity.this, "Success!", Toast.LENGTH_SHORT).show();
 
+                Log.e("Data Error: ", ""+response.body().data.item_list.get(0).item_name);
                 recyclerViewFragment =new RecyclerViewFragment();
                 recyclerViewFragment.list.addAll(response.body().data.item_list);
                 setFragment(recyclerViewFragment);

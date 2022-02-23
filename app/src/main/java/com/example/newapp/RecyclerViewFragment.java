@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,10 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newapp.cartmodel.AddToCart;
+import com.example.newapp.cartmodel.CartData;
+import com.example.newapp.usermodel.UserData;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewFragment extends Fragment implements AddToCart{
+public class RecyclerViewFragment extends Fragment implements AddToCart {
     public List<UserData> list = new ArrayList<UserData>();
 //    Button btnGetData;
     CartData cartData;
@@ -47,7 +50,7 @@ public class RecyclerViewFragment extends Fragment implements AddToCart{
         cartData = new CartData();
 //        Toast.makeText(getActivity(), "rfergr", Toast.LENGTH_SHORT).show();
         setAdapter();
-        Toast.makeText(getContext(), "OnCreate", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), "OnCreate", Toast.LENGTH_SHORT).show();
 //        view.setClipToOutline(true);
 //        btnGetData = (Button) view.findViewById(R.id.btn_getData);
 //        btnGetData.setOnClickListener(new View.OnClickListener() {

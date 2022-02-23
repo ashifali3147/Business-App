@@ -6,13 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.newapp.cartmodel.CartData;
+
 import java.util.List;
 
 public class BuyConfirm extends AppCompatActivity implements PlusMinusCountButton{

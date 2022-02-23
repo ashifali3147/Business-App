@@ -13,7 +13,7 @@
         android:theme="@style/Theme.NewApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UserInfo"
+            android:name=".userinfo.UserInfo"
             android:exported="false" />
         <activity
             android:name=".BuyConfirm"
@@ -27,6 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
