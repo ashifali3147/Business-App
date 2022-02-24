@@ -1,7 +1,7 @@
 package com.example.newapp.userinfo;
 
 public class UserInfoModel {
-    public String error = "";
+    public boolean error = true;
     public String message = "";
     public UserinfoData data;
 }

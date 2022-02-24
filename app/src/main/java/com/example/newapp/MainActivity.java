@@ -27,20 +27,26 @@ public class MainActivity extends AppCompatActivity {
     RecyclerViewFragment recyclerViewFragment;
     LayoutInflater inflater;
     View popupView;
+    ProgressDialogMenu progressDialogMenu = new ProgressDialogMenu();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressDialogMenu.show(MainActivity.this, "Fetching Data", "Please Wait");
         apiCall();
         inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         popupView = inflater.inflate(R.layout.popup_window, null);
 
 
     }
+
+
+
     private void apiCall() {
         new ApiManager("http://myewards.in/").service.getMenuItemListing("15657", "15", "24019","", "", "", "", "1", "50", "", "", "", "name", "asc", "", "").enqueue(new Callback<UserModel>() {
             @Override
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+                progressDialogMenu.dismiss();
                 Toast.makeText(MainActivity.this, "Success!", Toast.LENGTH_SHORT).show();
 
                 Log.e("Data Error: ", ""+response.body().data.item_list.get(0).item_name);
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UserModel> call, Throwable t) {
+                progressDialogMenu.dismiss();
                 Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
@@ -75,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.user_info: startActivity(new Intent(getApplicationContext(), UserInfo.class));
+
         }
         return super.onOptionsItemSelected(item);
     }
