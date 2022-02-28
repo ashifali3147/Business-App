@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NewApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".OrderDetails"
+            android:exported="false" />
+        <activity
             android:name=".userinfo.UserInfo"
             android:exported="false" />
         <activity
@@ -29,8 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

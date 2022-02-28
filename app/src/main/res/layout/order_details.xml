@@ -42,25 +42,22 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTitle"
-
+            android:textSize="15dp"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/img_user"
-            android:lines="3"
-
-            android:text="Description" />
-
+            android:text="Order Time:" />
         <TextView
             android:id="@+id/tv_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="00"
+            android:textSize="10dp"
+            android:textColor="#E62B2B"
+            android:layout_toRightOf="@+id/img_user"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@+id/img_user"
-            android:text=""
-            android:textColor="#E62B2B"
-            android:textSize="10dp" />
+            android:layout_marginBottom="10dp"/>
 
 
 
@@ -91,27 +88,27 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/tv_cancelOrder"
+            android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:text="Max Quantity: "
+            android:textSize="10dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
-            android:text="Cancel Order "
-            android:textColor="#ED2411"
-            android:textSize="15dp" />
+            android:textColor="#ED2411" />
 
-        <ImageView
+        <TextView
             android:id="@+id/img_addButton"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_above="@+id/tv_cancelOrder"
+            android:layout_above="@+id/tv_quantity"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
+            android:text="Cancel Order"
 
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/add" />
+            android:layout_marginBottom="5dp" />
 
 
 
